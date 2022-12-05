@@ -20,7 +20,7 @@ const members = [
     {
         name : `Wayne Barnett`,
         role : `Founder & CEO`, 
-        image : `wayne-barnett-founder-ceo.jpg`
+        image : `wayne-barnett-founder-ceo.jpg`,
     },
 
     {
@@ -54,11 +54,19 @@ const members = [
     },
 ];
 
+let divElement = document.getElementById("output");
+
+let memberString;
+
 for (let i = 0; i < members.length; i++){
 
     const memberTeam = members[i];
 
     for (let key in memberTeam){
-        console.log(key, `=>`,  memberTeam[key])
+        memberString = key + ` => ` + memberTeam[key] +
+        console.log(memberString)
+        divElement.innerHTML += memberString + " <br /> ";
     }
+    
 }
+
