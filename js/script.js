@@ -62,10 +62,10 @@ for (let i = 0; i < members.length; i++){
 
     const memberTeam = members[i];
 
-    let card = createNewCard(memberTeam.name, memberTeam.role, memberTeam.image)
-    divElement.classList.add("d-flex", "flex-wrap", "container")
-    divElement.append(card)
-    console.log(card)
+    let card = createNewCard(memberTeam.name, memberTeam.role, memberTeam.image);
+    divElement.classList.add("d-flex", "flex-wrap", "container");
+    divElement.append(card);
+    console.log(card);
 }
 
 function createNewCard(infoName, infoRole, infoImage){
@@ -75,21 +75,21 @@ function createNewCard(infoName, infoRole, infoImage){
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
     
-    let cardImage = document.createElement("img")
-    cardImage.src = "./img/" + infoImage
+    let cardImage = document.createElement("img");
+    cardImage.src = "./img/" + infoImage;
 
     
-    let cardName = document.createElement("div")
-    cardName.classList.add("card-title")
-    cardName.innerHTML = infoName
+    let cardName = document.createElement("div");
+    cardName.classList.add("card-title");
+    cardName.innerHTML = infoName;
     
-    let cardRole = document.createElement("div")
-    cardRole.classList.add("card-text")
-    cardRole.innerHTML = infoRole
+    let cardRole = document.createElement("div");
+    cardRole.classList.add("card-text");
+    cardRole.innerHTML = infoRole;
     
-    cardBody.append(cardName, cardRole)
+    cardBody.append(cardName, cardRole);
     
-    card.append(cardImage, cardBody)
+    card.append(cardImage, cardBody);
 
-    return card
+    return card;
 }
