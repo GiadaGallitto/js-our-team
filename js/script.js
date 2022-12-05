@@ -78,7 +78,6 @@ function createNewCard(infoName, infoRole, infoImage){
     let cardImage = document.createElement("img");
     cardImage.src = "./img/" + infoImage;
 
-    
     let cardName = document.createElement("div");
     cardName.classList.add("card-title");
     cardName.innerHTML = infoName;
