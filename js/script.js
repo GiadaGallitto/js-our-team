@@ -38,7 +38,7 @@ const members = [
     {
         name : `Angela Lopez`, 
         role : `Social Media`, 
-        image : `Manager  angela-lopez-social-media-manager.jpg`
+        image : `angela-lopez-social-media-manager.jpg`
     },
 
     {
@@ -58,10 +58,6 @@ let divElement = document.getElementById("output");
 
 // const img = document.createElement("img");
 
-// let cardName = document.querySelectorAll("card-title")
-
-// let cardRole = document.querySelectorAll("card-text")
-
 let memberString;
 
 for (let i = 0; i < members.length; i++){
@@ -74,16 +70,33 @@ for (let i = 0; i < members.length; i++){
     //     divElement.innerHTML += memberString + " <br /> ";
     // }
 
-    divElement.append(createNewCard(memberTeam.name))
-
+    let card = createNewCard(memberTeam.name, memberTeam.role, memberTeam.image)
+    divElement.append(card)
+    console.log(card)
 }
 
-function createNewCard(infoName){
+function createNewCard(infoName, infoRole, infoImage){
     const card = document.createElement("div");
-    card.classList.add("card-body");
+    card.classList.add("card");
+
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+    
+    let cardImage = document.createElement("img")
+    cardImage.src = "./img/" + infoImage
+
+    
     let cardName = document.createElement("div")
     cardName.classList.add("card-title")
     cardName.innerHTML = infoName
-    card.append(cardName)
-    console.log(card)
+    
+    let cardRole = document.createElement("div")
+    cardRole.classList.add("card-text")
+    cardRole.innerHTML = infoRole
+    
+    cardBody.append(cardName, cardRole)
+    
+    card.append(cardImage, cardBody)
+
+    return card
 }
