@@ -71,13 +71,14 @@ for (let i = 0; i < members.length; i++){
     // }
 
     let card = createNewCard(memberTeam.name, memberTeam.role, memberTeam.image)
+    divElement.classList.add("d-flex", "flex-wrap", "container-fluid",  )
     divElement.append(card)
     console.log(card)
 }
 
 function createNewCard(infoName, infoRole, infoImage){
     const card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("card", "card-size");
 
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
