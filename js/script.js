@@ -56,18 +56,34 @@ const members = [
 
 let divElement = document.getElementById("output");
 
+// const img = document.createElement("img");
+
+// let cardName = document.querySelectorAll("card-title")
+
+// let cardRole = document.querySelectorAll("card-text")
+
 let memberString;
 
 for (let i = 0; i < members.length; i++){
 
     const memberTeam = members[i];
     
-    for (let key in memberTeam){
-        // console.log(key)
-        memberString = key + ` => ` + memberTeam[key];
-        console.log(memberString)
-        divElement.innerHTML += memberString + " <br /> ";
-    }
+    // for (let key in memberTeam){
+    //     memberString = key + ` => ` + memberTeam[key];
+    //     console.log(memberString)
+    //     divElement.innerHTML += memberString + " <br /> ";
+    // }
+
+    divElement.append(createNewCard(memberTeam.name))
 
 }
 
+function createNewCard(infoName){
+    const card = document.createElement("div");
+    card.classList.add("card-body");
+    let cardName = document.createElement("div")
+    cardName.classList.add("card-title")
+    cardName.innerHTML = infoName
+    card.append(cardName)
+    console.log(card)
+}
