@@ -56,19 +56,11 @@ const members = [
 
 let divElement = document.getElementById("output");
 
-// const img = document.createElement("img");
-
 let memberString;
 
 for (let i = 0; i < members.length; i++){
 
     const memberTeam = members[i];
-    
-    // for (let key in memberTeam){
-    //     memberString = key + ` => ` + memberTeam[key];
-    //     console.log(memberString)
-    //     divElement.innerHTML += memberString + " <br /> ";
-    // }
 
     let card = createNewCard(memberTeam.name, memberTeam.role, memberTeam.image)
     divElement.classList.add("d-flex", "flex-wrap", "container")
