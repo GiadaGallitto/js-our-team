@@ -71,7 +71,7 @@ for (let i = 0; i < members.length; i++){
     // }
 
     let card = createNewCard(memberTeam.name, memberTeam.role, memberTeam.image)
-    divElement.classList.add("d-flex", "flex-wrap", "container-fluid",  )
+    divElement.classList.add("d-flex", "flex-wrap", "container")
     divElement.append(card)
     console.log(card)
 }
